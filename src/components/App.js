@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import Navbar from "./Navbar";
 import Main from "./Main";
 import { connect } from "react-redux";
-import { initSubredditsFetch, selectSubredditType } from "../store/actions";
+import { initSubredditsFetch, selectSubredditType, fetchResources } from "../store/actions";
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,8 @@ class App extends Component {
       return;
     }
 
-    dispatch(initSubredditsFetch(selectedFilter));
+    // dispatch(initSubredditsFetch(selectedFilter));
+    dispatch(fetchResources(selectedFilter));
   }
 
   componentDidUpdate(prevProps) {
@@ -26,7 +27,8 @@ class App extends Component {
       if (loading) {
         return;
       }
-      dispatch(initSubredditsFetch(selectedFilter));
+      // dispatch(initSubredditsFetch(selectedFilter));
+      dispatch(fetchResources(selectedFilter));
     }
   }
 

@@ -48,7 +48,8 @@ function entities(
     case FETCH_RESOURCES_SUCCESS:
       return {
         ...state,
-        itemsList: action.entities,
+        /*itemsList: action.entities,*/
+        itemsList: action.payload,
         error: null,
         loading: false
       };

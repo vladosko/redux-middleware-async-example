@@ -12,11 +12,21 @@ export function selectSubredditType(filterType) {
   };
 }
 
+/*
 export function fetchResources(filterType) {
   return {
     type: FETCH_RESOURCES,
     filterType
   };
+}
+*/
+
+export function fetchResources(filterType) {
+  return {
+    type: FETCH_RESOURCES,
+    filterType,
+    payload: apiService.getSubreddits(filterType)
+  }
 }
 
 export function fetchResourcesSuccess(filterType, data) {
