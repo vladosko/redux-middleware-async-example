@@ -2,7 +2,6 @@ import { isPromise } from "../helpers/is-promise";
 
 export const customPromise = ({dispatch}) => {
     return (next) => (action) => {
-        console.log('from custom-promise')
         next(action);
         return isPromise(action.payload)
             && action.payload
